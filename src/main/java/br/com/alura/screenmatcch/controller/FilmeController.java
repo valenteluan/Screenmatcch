@@ -32,8 +32,7 @@ public class FilmeController {
     public String cadastraFilme(DadosCadastroFilme dados) {
         var filme = new Filme(dados);
         filmes.add(filme);
-        System.out.println(filmes);
-        return "filmes/formulario";
+        return "redirect:/filmes"; //Vai redirecionar e automaticamente chamar a função carregaPaginaListagem
     }
 
 }
