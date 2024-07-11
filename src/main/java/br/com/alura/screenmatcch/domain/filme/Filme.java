@@ -69,4 +69,11 @@ public class Filme {
                 ", genero='" + genero + '\'' +
                 '}';
     }
+
+    public void atualizaDados(DadosAteracaoFilme dados) {
+        this.nome = dados.nome();
+        this.anoLancamento = dados.ano();
+        this.duracaoEmMinutos = dados.duracao();
+        this.genero = dados.genero();
+    }
 }
