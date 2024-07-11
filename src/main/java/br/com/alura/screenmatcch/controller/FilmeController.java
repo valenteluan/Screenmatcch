@@ -6,6 +6,7 @@ import br.com.alura.screenmatcch.domain.filme.FilmeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +37,12 @@ public class FilmeController {
         var filme = new Filme(dados);
         repository.save(filme);
         return "redirect:/filmes"; //Vai redirecionar e automaticamente chamar a função carregaPaginaListagem
+    }
+
+    @DeleteMapping
+    public String removeFilme() {
+        System.out.println("Filme Excluido!");
+        return "redirect:/filmes";
     }
 
 }
